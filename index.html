@@ -7,7 +7,7 @@
 <!-- ============================================
      PAGE TITLE — shows in browser tab
      ============================================ -->
-<title>Thomas Iannelli</title>
+<title>Thomas Iannelli — Mechanical Engineer</title>
 
 <!-- Fonts: Bebas Neue (bold display), Barlow (clean body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,27 +124,20 @@
     color: var(--text);
   }
 
-  /* LOGO PLACEHOLDER — replace src with your logo image */
   .nav-logo-img {
     width: 38px;
     height: 38px;
     border-radius: 6px;
-    background: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--bg);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.02em;
     overflow: hidden;
   }
 
-  /* If you add an <img> inside .nav-logo-img, style it: */
   .nav-logo-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .nav-logo-text {
@@ -273,31 +266,41 @@
     line-height: 1.8;
   }
 
-  /* ── SKILLS GRAPHIC ──
-     Edit the skill names and widths below.
-     Width % = your proficiency level (visual only).
+  /* ── SKILLS LIST ──
+     Edit the skill names and details below.
+     To add a skill: copy a skill-item div.
      ================================================ */
-  .skills-graphic {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  .skills-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
-  .skill-row {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .skills-box-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--accent);
   }
 
-  .skill-header {
+  .skill-item {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
   }
+
+  .skill-item:last-child { border-bottom: none; }
 
   .skill-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 0.1em;
     color: var(--text);
   }
@@ -307,21 +310,7 @@
     font-size: 0.65rem;
     color: var(--text-dim);
     letter-spacing: 0.04em;
-  }
-
-  .skill-bar-track {
-    width: 100%;
-    height: 6px;
-    background: var(--border);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .skill-bar-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 3px;
-    transition: width 1s ease;
+    text-align: right;
   }
 
   /* ============================================
@@ -552,8 +541,7 @@
 <nav>
   <a href="#hero" class="nav-logo">
     <div class="nav-logo-img">
-      <!-- Replace "TI" with: <img src="your-logo.png" alt="Logo"> -->
-      <img src="your-logo.png" alt="Logo">
+      <img src="logo.png" alt="Thomas Iannelli Logo">
     </div>
     <span class="nav-logo-text">THOMAS IANNELLI</span>
   </a>
@@ -602,66 +590,41 @@
       </p>
     </div>
 
-    <!-- ── SKILLS GRAPHIC ──
-         Edit skill-name, skill-detail, and the
-         width style on skill-bar-fill to change
-         each skill's bar length.
+    <!-- ── SKILLS LIST ──
+         Edit skill names and details.
+         To add a skill: copy a skill-item div.
          ====================================== -->
-    <div class="skills-graphic fade-in d3">
+    <div class="skills-box fade-in d3">
+      <div class="skills-box-title">SKILLS</div>
 
       <!-- Skill 1 -->
-      <div class="skill-row">
-        <div class="skill-header">
-          <span class="skill-name">CFD SIMULATION</span>
-          <span class="skill-detail">Ansys Fluent · COMSOL</span>
-        </div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width: 90%"></div>
-        </div>
+      <div class="skill-item">
+        <span class="skill-name">CAD MODELING</span>
+        <span class="skill-detail">Solidwork CSWA · OnShape · SpaceClaim</span>
       </div>
 
       <!-- Skill 2 -->
-      <div class="skill-row">
-        <div class="skill-header">
-          <span class="skill-name">CAD MODELING</span>
-          <span class="skill-detail">OnShape · SpaceClaim</span>
-        </div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width: 85%"></div>
-        </div>
+          <div class="skill-item">
+        <span class="skill-name">CFD SIMULATION</span>
+        <span class="skill-detail">Ansys Fluent · COMSOL</span>
       </div>
 
       <!-- Skill 3 -->
-      <div class="skill-row">
-        <div class="skill-header">
-          <span class="skill-name">COMPOSITES MFG</span>
-          <span class="skill-detail">Hand Layup · Mold Design</span>
-        </div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width: 75%"></div>
-        </div>
+      <div class="skill-item">
+        <span class="skill-name">COMPOSITES MFG</span>
+        <span class="skill-detail">Hand Layup · Mold Design · Vacuum Infusion</span>
       </div>
 
       <!-- Skill 4 -->
-      <div class="skill-row">
-        <div class="skill-header">
-          <span class="skill-name">THERMAL SYSTEMS</span>
-          <span class="skill-detail">Cooling · Heat Exchangers</span>
-        </div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width: 70%"></div>
-        </div>
+      <div class="skill-item">
+        <span class="skill-name">THERMAL SYSTEMS</span>
+        <span class="skill-detail">Cooling · Heat Exchangers</span>
       </div>
 
       <!-- Skill 5 — add more by copying this block -->
-      <div class="skill-row">
-        <div class="skill-header">
-          <span class="skill-name">AERODYNAMICS</span>
-          <span class="skill-detail">Vehicle Aero · Wind Tunnel</span>
-        </div>
-        <div class="skill-bar-track">
-          <div class="skill-bar-fill" style="width: 88%"></div>
-        </div>
+      <div class="skill-item">
+        <span class="skill-name">AERODYNAMICS</span>
+        <span class="skill-detail">Vehicle Aero · Wind Tunnel</span>
       </div>
 
     </div>
@@ -780,15 +743,15 @@
     </p>
     <div class="contact-links">
       <!-- EMAIL — change href and display text -->
-      <a href="mailto:your.email@tufts.edu" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#334a5c46411d565e525a5f7347465547401d565746" class="contact-link">
         <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="2" y="4" width="16" height="12" rx="2"/>
           <path d="M2 4l8 6 8-6"/>
         </svg>
-        your.email@tufts.edu
+        <span class="__cf_email__" data-cfemail="1960766c6b377c74787075596d6c7f6d6a377c7d6c">[email&#160;protected]</span>
       </a>
       <!-- LINKEDIN — change href to your profile URL -->
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+      <a href="https://www.linkedin.com/in/thomasjohniannelli/" target="_blank" class="contact-link">
         <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="2" y="2" width="16" height="16" rx="3"/>
           <path d="M6 9v5M6 6v.01M10 14v-3.5a1.5 1.5 0 113 0V14M10 9v5"/>
@@ -806,9 +769,8 @@
   <p>&copy; 2026 Thomas Iannelli</p>
 </footer>
 
-<!-- Scroll-triggered animations + skill bar animation -->
+<!-- Scroll-triggered animations -->
 <script>
-  // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -824,28 +786,6 @@
     }
     observer.observe(el);
   });
-
-  // Animate skill bars when they scroll into view
-  const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fills = entry.target.querySelectorAll('.skill-bar-fill');
-        fills.forEach(fill => {
-          const target = fill.style.width;
-          fill.style.width = '0%';
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              fill.style.width = target;
-            });
-          });
-        });
-        barObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  const skillsEl = document.querySelector('.skills-graphic');
-  if (skillsEl) barObserver.observe(skillsEl);
 </script>
 
 </body>
