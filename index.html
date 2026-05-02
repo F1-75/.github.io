@@ -256,6 +256,27 @@
     max-width: 520px;
     line-height: 1.8;
   }
+     .hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+
+  .hero-photo {
+    flex-shrink: 0;
+    width: 320px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /* ============================================
      ABOUT SECTION
@@ -525,6 +546,8 @@
     #hero { padding-top: 160px; padding-bottom: 100px; }
     .about-layout { grid-template-columns: 1fr; gap: 40px; }
     .portfolio-grid { grid-template-columns: 1fr; }
+       .hero-layout { flex-direction: column; gap: 40px; }
+    .hero-photo { width: 100%; max-width: 300px; height: 360px; }
   }
 
   @media (max-width: 480px) {
@@ -578,11 +601,19 @@
      — Edit the title and subtitle text
      ============================================ -->
 <section id="hero">
-  <div class="hero-label fade-in">MECHANICAL & MATERIALS ENGINEERING</div>
-  <h1 class="hero-title fade-in d1">THOMAS<br>IANNELLI</h1>
-  <p class="hero-sub fade-in d2">
-    Engineering student at Tufts University & FSAE Project Lead
-  </p>
+  <div class="hero-layout">
+    <div>
+      <div class="hero-label fade-in">MECHANICAL & MATERIALS ENGINEERING</div>
+      <h1 class="hero-title fade-in d1">THOMAS<br>IANNELLI</h1>
+      <p class="hero-sub fade-in d2">
+        Engineering student at Tufts University & FSAE Project Lead
+      </p>
+    </div>
+    <!-- HERO PHOTO — replace src with your image filename -->
+    <div class="hero-photo fade-in d3">
+      <img src="headshot.jpg" alt="Thomas Iannelli">
+    </div>
+  </div>
 </section>
 
 <!-- ============================================
